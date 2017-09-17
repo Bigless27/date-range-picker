@@ -1,9 +1,21 @@
 html,
 body {
     height: 100%;
-    font-family: Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif;
+    background: #d3d3d3;
 }
 
 a.active {
     background-color: gray;
+}
+
+#calendar-container {
+    width: 481px;
+}
+
+.calendar-days {
+    width: 60px;
+    height: 60px;
+    background: #669999;
+    border: 3px solid white;
 }

@@ -1,5 +1,17 @@
 <div class='flex-container flex-center'>
-    <div *ngFor="let day of daysArr">
-        <div>day</div>
+    <div id='calendar-container' class='flex-container flex-column'>
+        <div class='flex-container flex-center-horz'>
+            <div class='fa fa-chevron-left'></div>
+            <div class='width-5'></div>
+            <div>Month</div>
+            <div class='width-5'></div>
+            <div class='fa fa-chevron-right'></div>
+        </div>
+        <div class='height-20px'></div>
+        <div class='flex-container flex-wrap'>
+            <div *ngFor="let day of daysArr">
+                <div class='calendar-days flex-container flex-center'>day</div>
+            </div>
+        </div>
     </div>
 </div>
