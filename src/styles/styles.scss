@@ -102,3 +102,168 @@ input[type='search'] {
 // {
 //     color: #FE7F4C;
 // }
+a {
+    color: #0d5389 !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid #0d5389;
+    letter-spacing: 0.88px !important;
+}
+
+a:hover,
+a:focus {
+    color: #08395e;
+    text-decoration: none;
+}
+
+a.visited {
+    color: #666;
+}
+
+a.directional {
+    text-decoration: none;
+    border-bottom: none;
+}
+
+a.directional .icon {
+    transition: margin-left 0.5s ease;
+    margin-left: 10px;
+}
+
+a.directional:hover .icon {
+    margin-left: 15px;
+}
+
+a.simple {
+    color: #0d5389;
+    text-decoration: none;
+    border-bottom: none;
+}
+
+button,
+.button {
+    background: #fff;
+    border-radius: 0;
+    border: 2px solid transparent;
+    text-transform: uppercase;
+    padding: 15px 45px;
+    box-shadow: inset 0 0 0 2px transparent;
+    transition: all 0.5 ease-in-out;
+    letter-spacing: 0.88px;
+}
+
+.button:hover,
+button:hover,
+button:focus,
+.button:focus {
+    outline: none;
+}
+
+button.underline,
+.button.underline {
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+button.underline:hover,
+.button.underline:hover {
+    color: #b19378;
+}
+
+button.primary,
+.button.primary {
+    color: #b19378;
+    border-color: #b19378;
+}
+
+button.primary:hover,
+.button.primary:hover {
+    color: #b19378;
+    border-color: #b19378;
+    box-shadow: inset 0 0 0 2px #b19378;
+}
+
+button.secondary,
+.button.secondary {
+    color: #666;
+    border-color: #666;
+}
+
+button.secondary:hover,
+.button.secondary:hover {
+    color: #666;
+    border-color: #666;
+    box-shadow: inset 0 0 0 2px #666;
+}
+
+button:disabled,
+.button:disabled {
+    color: #dfdbd8;
+    border-color: transparent;
+}
+
+button:hover:disabled,
+.button:hover:disabled {
+    border-color: transparent;
+}
+
+button.bordered:disabled,
+.button.bordered:disabled {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #dfdbd8;
+}
+
+button:hover:disabled,
+.button:hover:disabled {
+    box-shadow: inset 0 0 0 2px transparent;
+    color: #dfdbd8;
+}
+
+.block {
+    width: 100%;
+}
+
+.inline-button,
+.form-group label.inline-button,
+.dropzone-download-button {
+    margin: 0;
+    padding: 0;
+    text-decoration: underline;
+    height: auto;
+}
+
+.dropzone-download-button {
+    font-family: 'open_sansregular';
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.4px;
+    text-decoration: none;
+    color: #666;
+    font-weight: 400;
+    text-transform: none;
+}
+
+.inline-button:hover,
+.form-group label.inline-button:hover,
+.inline-button:focus,
+.form-group label.inline-button:focus {
+    background-color: transparent;
+    color: #b19378;
+}
+
+.icon-button {
+    border: 0;
+    text-decoration: none;
+}
+
+.button.text-align-l,
+button.text-align-l {
+    padding-left: 0;
+}
+
+.button.text-align-r,
+button.text-align-r {
+    padding-right: 0;
+}

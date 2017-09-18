@@ -16,8 +16,9 @@ import * as moment from 'moment';
 })
 export class AppComponent implements OnInit {
   public date = moment();
-
   public dateForm: FormGroup;
+
+  public isReserved = null;
 
   public daysArr;
 
@@ -58,6 +59,22 @@ export class AppComponent implements OnInit {
   public previousMonth() {
     this.date.subtract(1, 'M');
     this.daysArr = this.createCalendar(this.date);
+  }
+
+  public todayCheck(day) {
+    if (!day) {
+      return false;
+    }
+    return moment().format('L') === day.format('L');
+  }
+
+  public reserve() {
+    if (!this.dateForm.valid) {
+      return;
+    }
+    let dateFromMoment = this.dateForm.value.dateFrom;
+    let dateToMoment = this.dateForm.value.dateTo;
+    this.isReserved = `Reserved from ${dateFromMoment} to ${dateToMoment}`;
   }
 
   public isSelected(day) {
