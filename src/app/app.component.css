@@ -17,5 +17,9 @@ a.active {
     width: 60px;
     height: 60px;
     background: #669999;
-    border: 3px solid white;
+    border: 3px solid #c2c2c2;
+}
+
+.inactive {
+    opacity: 0.5;
 }

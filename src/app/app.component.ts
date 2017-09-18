@@ -9,13 +9,29 @@ import * as moment from 'moment';
   template: require('./app.component.html')
 })
 export class AppComponent implements OnInit {
-  public today = moment();
+  public date = moment();
 
   public daysArr;
 
   public ngOnInit() {
-    console.log(this.today);
-    this.daysArr = Array.apply(null, { length: 30 });
-    console.log(this.daysArr);
+    this.daysArr = this.createCalendar(this.date);
   }
+
+  public createCalendar(month) {
+    let firstDay = moment(month).startOf('M');
+    let days = Array.apply(null, { length: month.daysInMonth() })
+      .map(Number.call, Number)
+      .map(n => {
+        return moment(firstDay).add(n, 'd');
+      });
+
+    for (let n = 0; n < firstDay.weekday(); n++) {
+      days.unshift(null);
+    }
+    return days;
+  }
+
+  nextMonth() {}
+
+  previousMonth() {}
 }

@@ -3,14 +3,23 @@
         <div class='flex-container flex-center-horz'>
             <div class='fa fa-chevron-left'></div>
             <div class='width-5'></div>
-            <div>Month</div>
+            <div>{{date.format('MMMM')}} {{date.format('YYYY')}}</div>
             <div class='width-5'></div>
             <div class='fa fa-chevron-right'></div>
         </div>
         <div class='height-20px'></div>
+        <div class='flex-container'>
+            <div class='calendar-days flex-container flex-center'>S</div>
+            <div class='calendar-days flex-container flex-center'>M</div>
+            <div class='calendar-days flex-container flex-center'>T</div>
+            <div class='calendar-days flex-container flex-center'>W</div>
+            <div class='calendar-days flex-container flex-center'>T</div>
+            <div class='calendar-days flex-container flex-center'>F</div>
+            <div class='calendar-days flex-container flex-center'>S</div>
+        </div>
         <div class='flex-container flex-wrap'>
             <div *ngFor="let day of daysArr">
-                <div class='calendar-days flex-container flex-center'>day</div>
+                <div class='calendar-days flex-container flex-center' [ngClass]="{'inactive': !day}">{{day?.date()}}</div>
             </div>
         </div>
     </div>
