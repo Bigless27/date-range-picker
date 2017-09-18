@@ -1,4 +1,10 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators
+} from '@angular/forms';
 import { AppState } from './app.service';
 import * as moment from 'moment';
 
@@ -11,7 +17,20 @@ import * as moment from 'moment';
 export class AppComponent implements OnInit {
   public date = moment();
 
+  public dateForm: FormGroup;
+
   public daysArr;
+
+  constructor(private fb: FormBuilder) {
+    this.initDateRange();
+  }
+
+  public initDateRange() {
+    return (this.dateForm = this.fb.group({
+      dateFrom: [null, Validators.required],
+      dateTo: [null, Validators.required]
+    }));
+  }
 
   public ngOnInit() {
     this.daysArr = this.createCalendar(this.date);
@@ -31,7 +50,42 @@ export class AppComponent implements OnInit {
     return days;
   }
 
-  nextMonth() {}
+  public nextMonth() {
+    this.date.add(1, 'M');
+    this.daysArr = this.createCalendar(this.date);
+  }
 
-  previousMonth() {}
+  public previousMonth() {
+    this.date.subtract(1, 'M');
+    this.daysArr = this.createCalendar(this.date);
+  }
+
+  public isSelected(day) {
+    if (!day) {
+      return false;
+    }
+    let dateFromMoment = moment(this.dateForm.value.dateFrom, 'MM/DD/YYYY');
+    let dateToMoment = moment(this.dateForm.value.dateTo, 'MM/DD/YYYY');
+    if (this.dateForm.valid) {
+      return (
+        dateFromMoment.isSameOrBefore(day) && dateToMoment.isSameOrAfter(day)
+      );
+    }
+    if (this.dateForm.get('dateFrom').valid) {
+      return dateFromMoment.isSame(day);
+    }
+  }
+
+  public selectedDate(day) {
+    let dayFormatted = day.format('MM/DD/YYYY');
+    if (this.dateForm.valid) {
+      this.dateForm.setValue({ dateFrom: null, dateTo: null });
+      return;
+    }
+    if (!this.dateForm.get('dateFrom').value) {
+      this.dateForm.get('dateFrom').patchValue(dayFormatted);
+    } else {
+      this.dateForm.get('dateTo').patchValue(dayFormatted);
+    }
+  }
 }

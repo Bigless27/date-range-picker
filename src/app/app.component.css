@@ -10,7 +10,7 @@ a.active {
 }
 
 #calendar-container {
-    width: 481px;
+    width: 462px;
 }
 
 .calendar-days {
@@ -22,4 +22,9 @@ a.active {
 
 .inactive {
     opacity: 0.5;
+}
+
+.selected {
+    background: peru;
+    opacity: 0.6;
 }

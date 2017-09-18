@@ -1,19 +1,104 @@
 /* this file will be extracted to main dist folder and is imported in index.html */
-/* This file is for setting global styles  */
-@import 'variables';
 
+
+/* This file is for setting global styles  */
+
+@import 'variables';
 nav {
-  margin-top: 16px;
+    margin-top: 16px;
 }
 
 nav a {
-  background-color: $nav-button-color;
-  color: white;
-  padding: 8px 16px;
-  margin: 8px;
-  vertical-align: middle;
-  line-height: 1.25;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 4px;
+    background-color: $nav-button-color;
+    color: white;
+    padding: 8px 16px;
+    margin: 8px;
+    vertical-align: middle;
+    line-height: 1.25;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
 }
+
+input:not([type]):hover:not([readonly]),
+input[type='text']:hover:not([readonly]),
+input[type='password']:hover:not([readonly]),
+input[type='email']:hover:not([readonly]),
+input[type='url']:hover:not([readonly]),
+input[type='time']:hover:not([readonly]),
+input[type='date']:hover:not([readonly]),
+input[type='datetime']:hover:not([readonly]),
+input[type='datetime-local']:hover:not([readonly]),
+input[type='tel']:hover:not([readonly]),
+input[type='number']:hover:not([readonly]),
+input[type='search']:hover:not([readonly]) {
+    border: 2px solid #777;
+}
+
+input:not([type]),
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='url'],
+input[type='time'],
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='tel'],
+input[type='number'],
+input[type='search'] {
+    border-radius: 0;
+    outline: none;
+    height: 3rem;
+    width: 100%;
+    font-size: 1rem;
+    padding: 0 0 0 2px;
+    box-shadow: none;
+    box-sizing: content-box;
+    margin-top: 5px;
+}
+
+.input-underline {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 2px solid #d9d9d9;
+}
+
+.input-underline:hover {
+    border-bottom: 2px solid #777777 !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+}
+
+// input:not([type]):focus:not([readonly]),
+// input[type=text]:focus:not([readonly]),
+// input[type=password]:focus:not([readonly]),
+// input[type=email]:focus:not([readonly]),
+// input[type=url]:focus:not([readonly]),
+// input[type=time]:focus:not([readonly]),
+// input[type=date]:focus:not([readonly]),
+// input[type=datetime]:focus:not([readonly]),
+// input[type=datetime-local]:focus:not([readonly]),
+// input[type=tel]:focus:not([readonly]),
+// input[type=number]:focus:not([readonly]),
+// input[type=search]:focus:not([readonly]) {
+//     border-bottom: 1px solid #777;
+//     box-shadow: none;
+// }
+// input:not([type]):focus:not([readonly])+label,
+// input[type=text]:focus:not([readonly])+label,
+// input[type=password]:focus:not([readonly])+label,
+// input[type=email]:focus:not([readonly])+label,
+// input[type=url]:focus:not([readonly])+label,
+// input[type=time]:focus:not([readonly])+label,
+// input[type=date]:focus:not([readonly])+label,
+// input[type=datetime]:focus:not([readonly])+label,
+// input[type=datetime-local]:focus:not([readonly])+label,
+// input[type=tel]:focus:not([readonly])+label,
+// input[type=number]:focus:not([readonly])+label,
+// input[type=search]:focus:not([readonly])+label,
+// {
+//     color: #FE7F4C;
+// }
